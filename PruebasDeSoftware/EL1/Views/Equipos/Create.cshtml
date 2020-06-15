@@ -1,0 +1,45 @@
+﻿@model EL1.ViewModels.EquipoVM
+@{
+    ViewData["Title"] = "Registro de equipos";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white p-1">
+                    <h5>Registro de equipo</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" autocomplete="off">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Codigo" class="control-label"></label>
+                            <input asp-for="Codigo" class="form-control" />
+                            <span asp-validation-for="Codigo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Nombre" class="control-label"></label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Fecha" class="control-label"></label>
+                            <input asp-for="Fecha" class="form-control" />
+                            <span asp-validation-for="Fecha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-save"></i> Crear
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

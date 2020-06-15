@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "font-awesome-5-css@5.4.1",
+      "destination": "wwwroot/lib/font-awesome-5-css/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "popper.js@1.16.0",
+      "destination": "wwwroot/lib/popperjs/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "moment.js@2.24.0",
+      "destination": "wwwroot/lib/momentjs/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "noUiSlider@14.0.3",
+      "destination": "wwwroot/lib/noUiSlider/"
+    }
+  ]
+}

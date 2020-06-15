@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Contacto";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Desarrollado por Edinson Aldaz</p>
+
+<div class="row">
+    <div class="col-lg-7 col-md-12">
+
+        <!--Grid row-->
+        <div class="row text-center">
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-3">
+
+                <p>
+                    <i class="fa fa-map fa-1x mr-2 grey-text"></i>Jr. Las Hiedras 742<br />Urb. Las Palmeras<br />Lima - Los Olivos
+                </p>
+
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-3">
+
+                <p><i class="fa fa-building fa-1x mr-2 grey-text"></i>De Lunes a Viernes, las 24 horas</p>
+
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-3">
+
+                <p><i class="fa fa-mobile-alt fa-1x mr-2 grey-text"></i>+ 51 987 917 276</p>
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+        <!--Google map-->
+        <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px"></div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbZl6j3_fnw2nhX_WLFER1V8gwhepmTeI"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", fInicializar);
+
+        function fInicializar() {
+            // Initialize maps
+            google.maps.event.addDomListener(window, 'load', regular_map);
+        }
+
+        // Regular map
+        function regular_map() {
+            var var_location = new google.maps.LatLng(-11.9880099, -77.0715475);
+
+            var var_mapoptions = {
+                center: var_location,
+                zoom: 14
+            };
+
+            var var_map = new google.maps.Map(document.getElementById("map-container"),
+                var_mapoptions);
+
+            var var_marker = new google.maps.Marker({
+                position: var_location,
+                map: var_map,
+                title: "Vanesita Bazar"
+            });
+        }
+    </script>
+}
